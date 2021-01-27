@@ -6,8 +6,13 @@ const pizzasSchema = mongoose.Schema({
         type:String,
         required:true,
     },
-    base:{ type: mongoose.Schema.Types.ObjectId, ref: 'Ingredients', required: true },
-    ingredients:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Ingredients', required: true }],
+    base:{ 
+        type:String,
+        required:true,},
+    ingredients:{
+        type:Array,
+        required:true
+    },
     price:{
         type:String,
         required:false,

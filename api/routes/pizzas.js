@@ -10,8 +10,6 @@ const Pizza = require('../models/pizzas');
 router.get('/', (req,res,next) => {
    Pizza.find()
    .select('-__v')
-   .populate('ingredients', '_id, name')
-   .populate('base', '-__v')
    .exec()
    .then(data => {
        const response = {
