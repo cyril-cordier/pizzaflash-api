@@ -7,7 +7,7 @@ const Pizza = require('../models/pizzas');
 
 
 
-router.get('/', checkAuth,(req,res,next) => {
+router.get('/', (req,res,next) => {
    Pizza.find()
    .select('-__v')
    .populate('ingredients', '_id, name')
@@ -29,7 +29,7 @@ router.get('/', checkAuth,(req,res,next) => {
 });
 
 
-router.get('/:pizzaId', checkAuth,(req,res,next) => {
+router.get('/:pizzaId', (req,res,next) => {
     const id = req.params.pizzaId; 
     Pizza.findById(id)
    .exec()

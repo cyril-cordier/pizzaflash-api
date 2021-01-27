@@ -7,7 +7,7 @@ const Review = require('../models/review');
 
 
 
-router.get('/', checkAuth,(req,res,next) => {
+router.get('/', (req,res,next) => {
    Review.find()
    .populate('user','-password')
    .populate('pizza')
@@ -29,7 +29,7 @@ router.get('/', checkAuth,(req,res,next) => {
 });
 
 
-router.get('/:reviewId', checkAuth,(req,res,next) => {
+router.get('/:reviewId', (req,res,next) => {
     const id = req.params.reviewId; 
     Review.findById(id)
     .populate('user','-password')
