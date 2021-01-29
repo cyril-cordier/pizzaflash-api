@@ -10,7 +10,7 @@ const pizzasSchema = mongoose.Schema({
         type:String,
         required:true,},
     ingredients:{
-        type:Array,
+        type:String,
         required:true
     },
     price:{
