@@ -72,7 +72,8 @@ router.post('/login',(req,res,next) => {
             if(result){
                const pizzatoken =  jwt.sign({
                     email: user[0].email,
-                    userId: user[0]._id
+                    userId: user[0]._id, 
+                    is_admin:user[0].is_admin
                 },process.env.JWT_KEY,
                 {
                     expiresIn:"4500h"
