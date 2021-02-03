@@ -118,7 +118,7 @@ router.post('/', checkAuth,(req,res,next) => {
 
         res.status(200).json({
             success: "Ingredient created successfully ",
-            createdIngredient : Ingredient,
+            createdIngredient : ingredient,
             request:{
                 type:'GET',
                 url:'http://localhost:3000/ingredients/' + result._id
